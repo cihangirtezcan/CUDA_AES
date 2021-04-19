@@ -29,7 +29,9 @@
 
 void selection(int choice) {
 	if (choice == 1) main128ExhaustiveSearch(1);
+	else if (choice == 11) main128ExhaustiveSearch(11);
 	else if (choice == 2) main128ExhaustiveSearch(2);
+	else if (choice == 22) main128ExhaustiveSearch(22);
 	else if (choice == 3) main128Ctr();
 	else if (choice == 4) main192ExhaustiveSearch();
 	else if (choice == 5) main192Ctr();
@@ -50,8 +52,10 @@ int main() {
 	cudaSetDevice(0);
 	int choice;
 	printf(
-		"(1) AES-128 Exhaustive Search (no bank conflict)\n"
-		"(2) AES-128 Exhaustive Search (conflicting S-box)\n"
+		"(1)  AES-128 Exhaustive Search (no bank conflict, byteperm)\n"
+		"(11) AES-128 Exhaustive Search (no bank conflict, arithmetic shift)\n"
+		"(2) AES-128 Exhaustive Search (conflicting S-box, arithmetic shift)\n"
+		"(22) AES-128 Exhaustive Search (conflicting S-box, byteperm)\n"
 		"(3) AES-128 CTR \n"
 		"(4) AES-192 Exhaustive Search\n"
 		"(5) AES-192 CTR\n"

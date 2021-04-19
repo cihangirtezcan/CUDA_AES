@@ -33,6 +33,7 @@ __global__ void exhaustiveSearch(u32* pt, u32* ct, u32* rk, u32* t0G, u32* t1G, 
 	__shared__ u32 rconS[RCON_SIZE];
 	__shared__ u32 ctS[U32_SIZE];
 
+
 	if (threadIdx.x < TABLE_SIZE) {
 		t0S[threadIdx.x] = t0G[threadIdx.x];
 		t1S[threadIdx.x] = t1G[threadIdx.x];
@@ -1153,9 +1154,12 @@ __host__ int main128ExhaustiveSearch(int choice) {
 	clock_t beginTime = clock();
 //	exhaustiveSearch << <BLOCKS, THREADS >> > (pt, ct, rk, t0, t1, t2, t3, t4, rcon, range);
 //	exhaustiveSearchWithOneTable<<<BLOCKS, THREADS>>>(pt, ct, rk, t0, t4, rcon, range);
-	if (choice == 1) exhaustiveSearchWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBoxCihangir << <BLOCKS, THREADS >> > (pt, ct, rk, t0, t4, rcon, range, SAES_d);
+	if (choice == 1) exhaustiveSearchWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBoxCihangir2 << <BLOCKS, THREADS >> > (pt, ct, rk, t0, t4, rcon, range, SAES_d);
+	if (choice == 11) exhaustiveSearchWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBoxCihangir << <BLOCKS, THREADS >> > (pt, ct, rk, t0, t4, rcon, range, SAES_d);
 //	else if (choice == 2) exhaustiveSearchWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBox << <BLOCKS, THREADS >> > (pt, ct, rk, t0, t4, rcon, range);
 	else if (choice == 2) exhaustiveSearchWithOneTableExtendedSharedMemory << <BLOCKS, THREADS >> > (pt, ct, rk, t0, t4, rcon, range);
+	else if (choice == 22) exhaustiveSearchWithOneTableExtendedSharedMemoryBytePerm << <BLOCKS, THREADS >> > (pt, ct, rk, t0, t4, rcon, range);
+	
 //	exhaustiveSearchWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBox << <BLOCKS, THREADS >> > (pt, ct, rk, t0, t4, rcon, range);
 //	exhaustiveSearchCem << <BLOCKS, THREADS >> > (pt, ct, rk, t0, t1, t4, rcon, range, SAES_d);
 	cudaDeviceSynchronize();
