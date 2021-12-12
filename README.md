@@ -4,9 +4,8 @@ These are CUDA optimizations of T-table based implementation of AES which contai
 
 We achieved 
 
-315.2 Gbps AES-128 encryption on a GTX 970
-
-878.6 Gbps AES-128 encryption on an RTX 2070 Super
+**315.2** Gbps AES-128 encryption on a **GTX 970**<br>
+**878.6** Gbps AES-128 encryption on an **RTX 2070 Super**
 
 These results are published in https://ieeexplore.ieee.org/document/9422754
 
@@ -15,8 +14,8 @@ In science, reproducibility of experiments is crucial but almost none of the GPU
 Moreover, comparing different optimization results on different GPUs is almost impossible. When you have adifferent kind of optimization and want to compare it with our optimizations, please use these codes on the same GPU you used for your codes.
 
 
-**Cihangir Tezcan**, PhD
-Director of Cyber Security Center
-Head of Department of Cyber Security, Informatics Institute
-Middle East Technical University
-Ankara, Turkey
+**Cihangir Tezcan**, PhD<br>
+_Director of Cyber Security Center_<br>
+_Head of Department of Cyber Security, Informatics Institute_<br>
+_Middle East Technical University_<br>
+_Ankara, Turkey_
