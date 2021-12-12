@@ -16,11 +16,7 @@ Moreover, comparing different optimization results on different GPUs is almost i
 
 
 **Cihangir Tezcan**, PhD
-
 Director of Cyber Security Center
-
 Head of Department of Cyber Security, Informatics Institute
-
 Middle East Technical University
-
 Ankara, Turkey
